@@ -70,6 +70,16 @@ span.psw {
 		width: 100%;
 	}
 }
+#logout{
+	background-color: red;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 20%;
+	float:right;
+}
 
 body {
 	background-image:
@@ -83,7 +93,7 @@ body {
 			src="C:/Users/hp/eclipse-workspace/University/src/main/webapp/WEB-INF/jsp/3.jpg"
 			alt="Avatar" class="avatar">
 	</div>
-
+     <button id="logout" onclick="window.location.href = 'welcome';">LogOut</button>
 	<div class="container">
 		<button onclick="window.location.href = 'AdminStudent';">Student</button>
 		<button onclick="window.location.href = 'AdminFaculty';">Faculty</button>

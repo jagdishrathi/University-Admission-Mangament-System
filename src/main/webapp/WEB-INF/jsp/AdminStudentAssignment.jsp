@@ -89,19 +89,19 @@ border:3px solid green;
 				<td>${subject[0]}</td>
 				<td>100</td>
 				<td>32</td>
-				<td><input type="text" name="subject1" /></td>
+				<td><input type="number" min="0" max="100" name="subject1" required /></td>
 			</tr>
 			<tr>
 				<td>${subject[1]}</td>
 				<td>100</td>
 				<td>32</td>
-				<td><input type="text" name="subject2" /></td>
+				<td><input type="number" min="0" max="100" name="subject2" required /></td>
 			</tr>
 			<tr>
 				<td>${subject[2]}</td>
 				<td>100</td>
 				<td>32</td>
-				<td><input type="text" name="subject3" /></td>
+				<td><input type="number" min="0" max="100" name="subject3" required /></td>
 			</tr>
 		<tr>
 			<th>Total Assignment Marks:</th>
@@ -112,6 +112,6 @@ border:3px solid green;
 		<h1>${message}</h1>
 		</form>
 	</table>
-	<button onclick="window.location.href = 'AdminStudentFilter';">Back</button>
+	<button onclick="window.location.href = 'AdminStudent';">Back</button>
 </body>
 </html>

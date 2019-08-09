@@ -12,7 +12,7 @@ import com.valtech.model.AddStudent;
 import com.valtech.model.Admin;
 
 @Service
-public class AdminServiceImpl {
+public class AdminServiceImpl implements AdminService {
 
 	AdminDaoImpl adminDaoImpl = new AdminDaoImpl();
 
@@ -24,32 +24,22 @@ public class AdminServiceImpl {
 	static final String USER = "root";
 	static final String PASS = "";
 
+
 	public boolean loginValidation(Admin admin) {
-		// TODO Auto-generated method stub
 		Connection conn = null;
 		try {
 			// STEP 1: Register JDBC driver
 			Class.forName(JDBC_DRIVER);
 
 			// STEP 2: Open a connection
-			System.out.println("Connecting to database...");
 			conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
-			// STEP 3: Execute a query
-			System.out.println("Connected database successfully...");
-
 			if (adminDaoImpl.loginValidate(conn, admin)) {
-				System.out.println("Successfull Execute service");
 				return true;
 			}
-
-			// STEP 5: Clean-up environment
-
 		} catch (Exception e) {
-			// Handle errors for Class.forName
 			e.printStackTrace();
 		} finally {
-			// finally block used to close resources
 			try {
 				if (conn != null)
 					conn.close();
@@ -62,29 +52,20 @@ public class AdminServiceImpl {
 	}
 
 	public boolean addStudent(AddStudent addStudent) {
-		// TODO Auto-generated method stub
 		Connection conn = null;
 		try {
-			// STEP 1: Register JDBC driver
 			Class.forName(JDBC_DRIVER);
 
-			// STEP 2: Open a connection
-			System.out.println("Connecting to database...");
 			conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
-			// STEP 3: Execute a query
-			System.out.println("Connected database successfully...");
-
 			if (adminDaoImpl.addStudent(conn, addStudent)) {
-				System.out.println("Successfull Execute service");
 				return true;
 			}
 
 		} catch (Exception e) {
-			// Handle errors for Class.forName
 			e.printStackTrace();
 		} finally {
-			// finally block used to close resources
+
 			try {
 				if (conn != null)
 					conn.close();
@@ -97,27 +78,19 @@ public class AdminServiceImpl {
 	}
 
 	public ArrayList filterStudent(String branch, String sem) {
-		// TODO Auto-generated method stub
-		// TODO Auto-generated method stub
+
 		Connection conn = null;
 		try {
-			// STEP 1: Register JDBC driver
+
 			Class.forName(JDBC_DRIVER);
 
-			// STEP 2: Open a connection
-			System.out.println("Connecting to database...");
 			conn = DriverManager.getConnection(DB_URL, USER, PASS);
-
-			// STEP 3: Execute a query
-			System.out.println("Connected database successfully...");
 
 			return adminDaoImpl.filterStudent(conn, branch, sem);
 
 		} catch (Exception e) {
-			// Handle errors for Class.forName
 			e.printStackTrace();
 		} finally {
-			// finally block used to close resources
 			try {
 				if (conn != null)
 					conn.close();
@@ -130,26 +103,20 @@ public class AdminServiceImpl {
 	}
 
 	public ArrayList subjectName(String studentBranch, String studentSem) {
-		// TODO Auto-generated method stub
 		Connection conn = null;
 		try {
-			// STEP 1: Register JDBC driver
+
 			Class.forName(JDBC_DRIVER);
 
-			// STEP 2: Open a connection
-			System.out.println("Connecting to database...");
 			conn = DriverManager.getConnection(DB_URL, USER, PASS);
-
-			// STEP 3: Execute a query
-			System.out.println("Connected database successfully...");
 
 			return adminDaoImpl.subjectName(conn, studentBranch, studentSem);
 
 		} catch (Exception e) {
-			// Handle errors for Class.forName
+
 			e.printStackTrace();
 		} finally {
-			// finally block used to close resources
+
 			try {
 				if (conn != null)
 					conn.close();
@@ -164,23 +131,17 @@ public class AdminServiceImpl {
 			String studentBranch) {
 		Connection conn = null;
 		try {
-			// STEP 1: Register JDBC driver
+
 			Class.forName(JDBC_DRIVER);
 
-			// STEP 2: Open a connection
-			System.out.println("Connecting to database...");
 			conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
-			// STEP 3: Execute a query
-			System.out.println("Connected database successfully...");
-
-			return adminDaoImpl.addStudentMarks(conn,subject1,subject2,subject3,studentId,studentBranch);
+			return adminDaoImpl.addStudentMarks(conn, subject1, subject2, subject3, studentId, studentBranch);
 
 		} catch (Exception e) {
-			// Handle errors for Class.forName
 			e.printStackTrace();
 		} finally {
-			// finally block used to close resources
+
 			try {
 				if (conn != null)
 					conn.close();
@@ -190,4 +151,4 @@ public class AdminServiceImpl {
 		} // end tr
 		return false;
 	}
-	}
+}

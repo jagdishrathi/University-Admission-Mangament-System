@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Admin Student Performance</title>
 <style>
 table, td, th {
 	border: 1px solid #ddd;
@@ -55,6 +55,10 @@ input[type=text] {
 	border: none;
 	background: #f1f1f1;
 }
+body{
+background-image:
+		url('C:/Users/hp/eclipse-workspace/University/src/main/webapp/WEB-INF/images/3.jpg');
+	}
 </style>
 </head>
 <body>

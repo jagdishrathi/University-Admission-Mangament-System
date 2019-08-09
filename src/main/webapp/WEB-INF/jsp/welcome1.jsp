@@ -1,16 +1,23 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Admin Student</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>University Admission Managment System</title>
 <style>
 form {
 	border: 3px solid #f1f1f1;
 	width: 450px;
 	margin-top: 150px;
 	margin-left: 500px;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
 }
 
 /* Set a style for all buttons */
@@ -73,32 +80,21 @@ span.psw {
 
 body {
 	background-image:
-		url("C:/Users/hp/eclipse-workspace/University/src/main/webapp/WEB-INF/images/3.jpg");
-}
-#logout{
-	background-color: red;
-	color: white;
-	padding: 14px 20px;
-	margin: 8px 0;
-	border: none;
-	cursor: pointer;
-	width: 20%;
-	float:right;
+		url("C:/Users/hp/eclipse-workspace/University/src/main/webapp/WEB-INF/jsp/3.jpg");
 }
 </style>
 </head>
 <body>
 	<div class="imgcontainer">
 		<img
-			src="C:/Users/hp/eclipse-workspace/University/src/main/webapp/WEB-INF/jsp/3.jpg"
+			src="C:/Users/hp/eclipse-workspace/University/src/main/webapp/WEB-INF/images/logo2.jpeg"
 			alt="Avatar" class="avatar">
 	</div>
-	  <button id="logout" onclick="window.location.href = 'AdminHome';">Back</button>
+
 	<div class="container">
-		<button onclick="window.location.href = 'AdminAddStudent';">
-			ADD STUDENT</button>
-		<button onclick="window.location.href = 'AdminStudentFilter';">
-			STUDENT PERFORMANCE</button>
+		<button onclick="window.location.href = 'AdminLogin';">Admin</button>
+		<button onclick="window.location.href = 'StudentLogin';">Student</button>
+		<button onclick="window.location.href = 'FacultyLogin';">Faculty</button>
 	</div>
 </body>
 </html>

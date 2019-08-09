@@ -10,7 +10,7 @@ import com.valtech.dao.StudentDaoImpl;
 import com.valtech.model.AddStudent;
 
 @Service
-public class StudentServiceImpl {
+public class StudentServiceImpl{
 	
 	// JDBC driver name and database URL
 	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
@@ -28,24 +28,16 @@ public class StudentServiceImpl {
 			Class.forName(JDBC_DRIVER);
 
 			// STEP 2: Open a connection
-			System.out.println("Connecting to database...");
 			conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
-			// STEP 3: Execute a query
-			System.out.println("Connected database successfully...");
-
 			if (StudentDaoImpl.loginValidate(conn, student)) {
-				System.out.println("Successfull Execute service");
 				return true;
 			}
 
-			// STEP 5: Clean-up environment
-
 		} catch (Exception e) {
-			// Handle errors for Class.forName
 			e.printStackTrace();
 		} finally {
-			// finally block used to close resources
+			
 			try {
 				if (conn != null)
 					conn.close();
@@ -57,4 +49,32 @@ public class StudentServiceImpl {
 		return false;
 	}
 
+	public static boolean updateProfile(String studentId,String studentName, String studentEmail, String studentBranch,
+			 String studentSem, String studentPhoneNumber, String studentPassword) {
+		
+		Connection conn = null;
+		try {
+			// STEP 1: Register JDBC driver
+			Class.forName(JDBC_DRIVER);
+
+			// STEP 2: Open a connection
+			conn = DriverManager.getConnection(DB_URL, USER, PASS);
+
+		 StudentDaoImpl.updateProfile(conn,studentId,studentName,studentEmail,studentBranch,studentSem,studentPhoneNumber,studentPassword);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			
+			try {
+				if (conn != null)
+					conn.close();
+			} catch (SQLException se) {
+				se.printStackTrace();
+			} // end finally try
+		} // end try
+		return false;
+	}
+		
 }
+

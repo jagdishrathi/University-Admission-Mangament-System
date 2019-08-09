@@ -49,7 +49,8 @@ hr {
 }
 
 body {
-	padding: 3rem;
+	background-image:
+		url('C:/Users/hp/eclipse-workspace/University/src/main/webapp/WEB-INF/images/3.jpg');
 }
 </style>
 </head>

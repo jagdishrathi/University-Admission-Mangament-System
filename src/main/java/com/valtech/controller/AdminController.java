@@ -22,14 +22,6 @@ public class AdminController {
 	ModelAndView mav = new ModelAndView();
 	private String branch,sem;
 
-	// JDBC driver name and database URL
-	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-	static final String DB_URL = "jdbc:mysql://localhost:3306/universityadmissionsystem";
-
-	// Database credentials
-	static final String USER = "root";
-	static final String PASS = "";
-
 	@RequestMapping(value = "/AdminLogin")
 	public String admin() {
 		return "AdminLogin";
@@ -53,6 +45,11 @@ public class AdminController {
 	@RequestMapping(value = "/AdminStudentFilter")
 	public String adminStudentFilter() {
 		return "/AdminStudentFilter";
+	}
+	
+	@RequestMapping(value = "/welcome")
+	public String logOut() {
+		return "welcome";
 	}
 
 	@RequestMapping(value = "/FacultyLogin")
@@ -127,7 +124,7 @@ public class AdminController {
 		String studentBranch=request.getParameter("branch");
 		boolean message = adminServiceImpl.addStudentMarks(subject1,subject2,subject3,studentId,studentBranch);
 		if(message==true) {
-			mav.setViewName("AdminStudentFilter");
+			mav.setViewName("AdminStudent");
 			mav.addObject("message", "Successfully Marks Added");
 		}
 		else {

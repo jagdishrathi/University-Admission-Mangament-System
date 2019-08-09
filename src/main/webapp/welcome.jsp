@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Sping MVC Redirection Application</title>
+<title>University Admisssion Managment System</title>
 <style>
 form {
 	border: 3px solid #f1f1f1;
