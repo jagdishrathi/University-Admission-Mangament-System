@@ -79,8 +79,7 @@ span.psw {
 }
 
 body {
-	background-image:
-		url("C:/Users/hp/eclipse-workspace/University/src/main/webapp/WEB-INF/jsp/3.jpg");
+	background-color: #66ffd9;
 }
 </style>
 </head>

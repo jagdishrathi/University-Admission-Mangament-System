@@ -9,8 +9,7 @@
     body{        
         padding-top: 60px;
         padding-bottom: 40px;
-        background-image:
-		url("C:/Users/hp/eclipse-workspace/University/src/main/webapp/WEB-INF/images/3.jpg");
+        background-color: #66ffd9;
     }
     .fixed-header, .fixed-footer{
         width: 100%;
@@ -68,16 +67,16 @@
         <div class="container" modelAttribute="studentProfile">
             <nav>
                 <h1><input value="${studentID}"/></h1>
-				<form modelAttribut="updateStudentProfile" action="StudentUpdateProfile" method="post">
-				<Button value="${studentID}"  name ="studentID" type="Submit">Update Profile</Button>
+				<form modelAttribute="AddStudent" action="StudentUpdateProfile" method="post">
+				<Button name ="studentID"  value="${studentID}"  type="Submit">Update Profile</Button>
 				</form>
-				<form modelAttribut="studentHallTicket" action="#" method="post">
+				<form modelAttribute="studentHallTicket" action="#" method="post">
 				<Button value="${studentID}"  name ="studentID" type="Submit">Hall Ticket</Button>
 				</form>
-				<form modelAttribut="studentPerformance" action="#" method="post">
+				<form modelAttribute="studentPerformance" action="#" method="post">
 				<Button value="${studentID}"  name ="studentID" type="Submit">Performance</Button>
 				</form>	
-				<form modelAttribut="viewStudentProfile" action="#" method="post">
+				<form modelAttribute="viewStudentProfile" action="#" method="post">
 				<Button value="${studentID}"  name ="studentID" type="Submit">View Profile</Button>
 				</form>	
 				<button onclick="window.location.href = 'welcome1';" id="Logout">LogOut</button>		

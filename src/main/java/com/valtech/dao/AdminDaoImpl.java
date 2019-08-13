@@ -13,7 +13,7 @@ import com.valtech.model.AddStudent;
 import com.valtech.model.Admin;
 
 @Repository
-public class AdminDaoImpl implements AdminDao{
+public class AdminDaoImpl implements AdminDao {
 
 	public boolean loginValidate(Connection conn, Admin admin) {
 

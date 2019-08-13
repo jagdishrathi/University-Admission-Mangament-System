@@ -54,12 +54,6 @@ img.avatar {
 	width: 400px;
 }
 
-/* The "Forgot password" text */
-span.psw {
-	float: right;
-	padding-top: 16px;
-}
-
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
 	span.psw {
@@ -82,16 +76,13 @@ span.psw {
 }
 
 body {
-	background-image:
-		url("C:/Users/hp/eclipse-workspace/University/src/main/webapp/WEB-INF/images/3.jpg");
+	background-color: #66ffd9;
 }
 </style>
 </head>
 <body>
 	<div class="imgcontainer">
-		<img
-			src="C:/Users/hp/eclipse-workspace/University/src/main/webapp/WEB-INF/jsp/3.jpg"
-			alt="Avatar" class="avatar">
+		<img src="C:/Users/hp/eclipse-workspace/University/src/main/webapp/WEB-INF/jsp/3.jpg" alt="Avatar" class="avatar">
 	</div>
      <button id="logout" onclick="window.location.href = 'welcome';">LogOut</button>
 	<div class="container">

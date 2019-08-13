@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.valtech.model.AddStudent;
@@ -20,7 +21,7 @@ public class AdminController {
 
 	AdminServiceImpl adminServiceImpl = new AdminServiceImpl();
 	ModelAndView mav = new ModelAndView();
-	private String branch,sem;
+	private String branch, sem;
 
 	@RequestMapping(value = "/AdminLogin")
 	public String admin() {
@@ -46,7 +47,7 @@ public class AdminController {
 	public String adminStudentFilter() {
 		return "/AdminStudentFilter";
 	}
-	
+
 	@RequestMapping(value = "/welcome")
 	public String logOut() {
 		return "welcome";
@@ -56,7 +57,6 @@ public class AdminController {
 	public String faculty() {
 		return "FacultyLogin";
 	}
-	
 
 	@RequestMapping(value = "/AdminLogin", method = RequestMethod.POST)
 	public ModelAndView loginProcess(HttpServletRequest request, HttpServletResponse response,
@@ -99,7 +99,7 @@ public class AdminController {
 	@RequestMapping(value = "/AdminStudentAssignment", method = RequestMethod.POST)
 	public ModelAndView adminStudentAssignment(HttpServletRequest request, HttpServletResponse response,
 			@ModelAttribute("adminStudentAssignment") AddStudent addStudent) {
-	    String studentId = request.getParameter("studentId");
+		String studentId = request.getParameter("studentId");
 		String studentname = request.getParameter("studentName");
 		String studentBranch = request.getParameter("studentBranch");
 		String studentSem = request.getParameter("studentSem");
@@ -112,22 +112,21 @@ public class AdminController {
 		mav.setViewName("AdminStudentAssignment");
 		return mav;
 	}
-	
-	@RequestMapping(value="/adminSubjectMarks",method=RequestMethod.POST)
+
+	@RequestMapping(value = "/adminSubjectMarks", method = RequestMethod.POST)
 	public ModelAndView adminSubjectMarks(HttpServletRequest request, HttpServletResponse response,
 			@ModelAttribute("adminSubjectMarks") AddStudent addStudent) {
 		System.out.println("Subject");
-		String subject1=request.getParameter("subject1");
-		String subject2=request.getParameter("subject2");
-		String subject3=request.getParameter("subject3");
+		String subject1 = request.getParameter("subject1");
+		String subject2 = request.getParameter("subject2");
+		String subject3 = request.getParameter("subject3");
 		String studentId = request.getParameter("Id");
-		String studentBranch=request.getParameter("branch");
-		boolean message = adminServiceImpl.addStudentMarks(subject1,subject2,subject3,studentId,studentBranch);
-		if(message==true) {
+		String studentBranch = request.getParameter("branch");
+		boolean message = adminServiceImpl.addStudentMarks(subject1, subject2, subject3, studentId, studentBranch);
+		if (message == true) {
 			mav.setViewName("AdminStudent");
 			mav.addObject("message", "Successfully Marks Added");
-		}
-		else {
+		} else {
 			mav.setViewName("AdminStudentAssignment");
 			mav.addObject("message", "Marks already added");
 		}

@@ -17,7 +17,7 @@
   border: 2px solid orange;
 }
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=email] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -62,10 +62,12 @@ hr {
 
 
 body {
-        background-image:
-		url("C:/Users/hp/eclipse-workspace/University/src/main/webapp/WEB-INF/images/3.jpg");
+        background-color: #66ffd9;
 }
     </style>
+    
+    <script>
+    </script>
 </head>
 <body>
     <form action="updateStudent" method="post" modelAttribute="updateStudent">
@@ -80,7 +82,7 @@ body {
           <input type="text" placeholder="Enter Name " name="name" required>
 
           <label><b>Email</b></label>
-          <input type="text" placeholder="Enter Email" name="email" required>
+          <input type="email" placeholder="Enter Email" name="email" required>
 
           <label><b>Branch</b></label>
           <select class="select-css" name="branch">
@@ -102,7 +104,7 @@ body {
            </select><br>
 
            <label><b>PhoneNumber</b></label>
-           <input type="text" placeholder="Enter Phone  Number" name="phonenumber" required>
+           <input type="text" placeholder="Enter Phone  Number" name="phonenumber" pattern="[789][0-9]{9}" title="Enter valid Mobile Number" required>
       
           <label><b>Update Password</b></label>
           <input type="password" placeholder="Enter Password" name="password" required>

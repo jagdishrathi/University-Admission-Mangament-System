@@ -102,5 +102,4 @@ public class AddStudent {
 		this.subject3 = subject3;
 	}
 
-	
 }

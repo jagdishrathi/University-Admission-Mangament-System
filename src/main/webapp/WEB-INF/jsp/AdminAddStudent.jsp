@@ -7,8 +7,7 @@
 <title>AdminAddStudent</title>
 <style>
 body {
-	background-image:
-		url('C:/Users/hp/eclipse-workspace/University/src/main/webapp/WEB-INF/images/3.jpg');
+	background-color: #66ffd9;
 }
 
 form {
@@ -39,7 +38,6 @@ button {
 	padding: 14px 20px;
 	margin: 8px 0;
 	border: none;
-	cursor: pointer;
 	width: 100%;
 }
 
@@ -75,12 +73,6 @@ img.avatar {
 	width: 400px;
 }
 
-/* The "Forgot password" text */
-span.psw {
-	float: right;
-	padding-top: 16px;
-}
-
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
 	span.psw {
@@ -107,11 +99,10 @@ h2 {
 		</div>
 		<h3>ADD STUDENT</h3>
 		<div class="container">
-			<label for="uname"><b>Student Id</b></label> <input type="text"
-				placeholder="Enter Username" name="StudentId" required /> <label
-				for="psw"><b> Student Password</b></label> <input type="password"
-				placeholder="Enter Password" name="StudentPassword" required />
-
+			<label><b>Student Id</b></label> 
+			<input type="text" placeholder="Enter Username" name="StudentId" required /> 
+			<label><b> Student Password</b></label> 
+			<input type="password" placeholder="Enter Password" name="StudentPassword" required />
 			<button type="submit">Add Student</button>
 		</div>
 		<h2>${message}</h2>

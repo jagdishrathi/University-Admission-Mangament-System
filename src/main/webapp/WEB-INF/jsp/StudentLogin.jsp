@@ -7,8 +7,7 @@
 <title>StudentLogin</title>
 <style>
 body {
-	background-image:
-		url('C:/Users/hp/eclipse-workspace/University/src/main/webapp/WEB-INF/images/3.jpg');
+	background-color: #66ffd9;
 }
 
 form {
@@ -75,12 +74,6 @@ img.avatar {
 	width: 400px;
 }
 
-/* The "Forgot password" text */
-span.psw {
-	float: right;
-	padding-top: 16px;
-}
-
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
 	span.psw {
@@ -106,11 +99,10 @@ h2 {
 		</div>
 		<h3>Student Login</h3>
 		<div class="container">
-			<label for="uname"><b>Username</b></label> <input type="text"
-				placeholder="Enter Username" name="StudentId" required> <label
-				for="psw"><b>Password</b></label> <input type="password"
-				placeholder="Enter Password" name="StudentPassword" required>
-
+			<label><b>Username</b></label>
+			 <input type="text" placeholder="Enter Username" name="StudentId" required> 
+			 <label><b>Password</b></label> 
+			 <input type="password" placeholder="Enter Password" name="StudentPassword" required>
 			<button type="submit">Login</button>
 			<h2>${message}</h2>
 		</div>

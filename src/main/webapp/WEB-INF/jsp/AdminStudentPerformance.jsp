@@ -56,8 +56,7 @@ input[type=text] {
 	background: #f1f1f1;
 }
 body{
-background-image:
-		url('C:/Users/hp/eclipse-workspace/University/src/main/webapp/WEB-INF/images/3.jpg');
+background-color: #66ffd9;
 	}
 </style>
 </head>
